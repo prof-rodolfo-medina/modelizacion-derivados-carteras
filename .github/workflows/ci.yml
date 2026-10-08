@@ -1,0 +1,30 @@
+name: Pruebas
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar dependencias
+        run: pip install -e ".[dev]"
+      - name: Pruebas del temario
+        run: pytest -q
+      - name: Ejecutar los cuadernos de las sesiones
+        env:
+          MPLBACKEND: Agg
+        run: |
+          for nb in sesiones/*/*.ipynb; do
+            echo "::group::$nb"
+            jupyter nbconvert --to notebook --execute --output-dir /tmp/nb "$nb"
+            echo "::endgroup::"
+          done

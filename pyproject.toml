@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mvdc"
+version = "2026.11"
+description = "Biblioteca docente: Modelización y Valoración de Derivados y Carteras en Finanzas (UNIR)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Rodolfo Rafael Medina" }]
+dependencies = ["numpy", "scipy", "pandas", "matplotlib"]
+
+[project.optional-dependencies]
+dev = ["pytest", "nbformat", "nbconvert", "ipykernel", "jupyterlab"]
+datos = ["yfinance"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
