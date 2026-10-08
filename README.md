@@ -59,8 +59,24 @@ pip install -e ".[dev]"
 jupyter lab
 ```
 
-¿Conda? `conda env create -f environment.yml && conda activate mvdc`. Más detalle en 
-[`docs/guia-entorno.md`](docs/guia-entorno.md). Para recibir el material nuevo de cada semana: `git pull`.
+¿Conda? `conda env create -f environment.yml && conda activate mvdc`.
+
+**Opción C — Visual Studio Code con GitHub.** Requiere [VS Code](https://code.visualstudio.com/), 
+[Git](https://git-scm.com/downloads) y Python ≥ 3.10.
+
+1. En VS Code: `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) → **Git: Clone** → **Clone from GitHub**, inicia sesión 
+   con tu cuenta de GitHub y elige `prof-rodolfo-medina/modelizacion-derivados-carteras`.
+2. Al abrir la carpeta, acepta **instalar las extensiones recomendadas** (Python, Jupyter y GitHub Pull Requests).
+3. `Ctrl+Shift+P` → **Python: Create Environment** → **Venv** → marca `requirements.txt` para instalar las dependencias.
+4. Abre un cuaderno de `sesiones/`, pulsa **Select Kernel** (arriba a la derecha) y elige `.venv`.
+5. Cada semana, en el panel **Source Control**, pulsa **Sync Changes** (equivale a `git pull`) para recibir el material nuevo.
+
+[![Abrir en GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/prof-rodolfo-medina/modelizacion-derivados-carteras) 
+¿Sin instalar nada pero con VS Code? **Codespaces** abre este repositorio en VS Code dentro del navegador, 
+con todo instalado.
+
+Paso a paso y solución de problemas: [`docs/guia-entorno.md`](docs/guia-entorno.md). 
+Para recibir el material nuevo de cada semana: `git pull` (o *Sync Changes* en VS Code).
 
 ## Estructura
 

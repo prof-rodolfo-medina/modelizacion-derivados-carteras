@@ -18,7 +18,7 @@
 ## Antes de la clase
 
 - Leer las *Ideas clave* de: Temas 1 y 2.
-- Abrir el cuaderno (botón *Abrir en Colab* o `jupyter lab` en local) y ejecutar la primera celda.
+- Abrir el cuaderno (botón *Abrir en Colab*, VS Code o `jupyter lab` en local) y ejecutar la primera celda.
 
 ## Microtests de la semana
 
