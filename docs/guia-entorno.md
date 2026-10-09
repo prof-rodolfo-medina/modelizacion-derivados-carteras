@@ -50,7 +50,7 @@ El repositorio incluye `.vscode/extensions.json`, así que VS Code muestra el av
 |---|---|
 | **Python** (Microsoft) | Intérprete, entornos virtuales, ejecución de scripts y pruebas |
 | **Jupyter** (Microsoft) | Abrir y ejecutar los cuadernos `.ipynb` dentro de VS Code |
-| **GitHub Pull Requests** (GitHub) | Sesión de GitHub integrada, *issues* y propuestas de cambios |
+| **GitHub Pull Requests** (GitHub) | Sesión de GitHub integrada en VS Code para clonar y sincronizar |
 
 Si no ves el aviso: panel **Extensions** (`Ctrl+Shift+X`) → escribe `@recommended` → instala las tres.
 

@@ -2,7 +2,7 @@
 
 Al reproducir con código los ejemplos de las *Ideas clave* se detectaron las siguientes discrepancias. 
 Todas están verificadas en [`tests/test_temario.py`](../tests/test_temario.py) o en los cuadernos de cada sesión. 
-Si encuentras otra, abre un *issue* en el repositorio.
+Si encuentras otra, coméntala en el foro «Pregúntale a tu profesor» del aula virtual o en la sesión síncrona.
 
 | Tema | Ubicación | En los apuntes | Valor correcto / comentario |
 |---|---|---|---|

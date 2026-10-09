@@ -11,6 +11,9 @@ revisar las entregas.
 
 > El aula virtual de UNIR sigue siendo el canal oficial: allí están los enunciados oficiales, se entregan 
 > las actividades y se responden los microtests.
+>
+> **Dudas:** plantéalas en la sesión síncrona o en el foro **«Pregúntale a tu profesor»** del aula virtual. 
+> Este repositorio es solo de consulta: no se atienden *issues*, *pull requests* ni mensajes por GitHub.
 
 ---
 
