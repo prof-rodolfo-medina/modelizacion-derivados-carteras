@@ -25,8 +25,11 @@ revisar las entregas.
 | 5 | 30/11 – 04/12 | 6. Estimación y predicción · 7. Black-Scholes | [Clase 5](sesiones/semana-05/) y **presentación Actividad 2** (60′) | Microtests 6.x, 7.x |
 | 6 | 07/12 – 11/12 | 8. Fundamentos de carteras · 9. Markowitz | [Clase 6](sesiones/semana-06/) (60′) | Microtests 8.x, 9.x |
 | 7 | 14/12 – 18/12 | 10. Cartera mixta y CAPM | [Clase 7](sesiones/semana-07/) y **resolución Actividad 2** (90′) | 🔴 **Actividad 2: lun 14/12 23:59** · Microtests 10.x |
-| 8 | 21/12 – 25/12 | Repaso | [Clase 8](sesiones/semana-08/) · Repaso (90′) | **Examen** |
+| — | 21/12 – 03/01 | *Receso institucional (Navidad y Año Nuevo)* | — | — |
+| 8 | 04/01 – 08/01/2027 | Repaso | [Clase 8](sesiones/semana-08/) · Repaso (90′) | **Examen** |
 | — | **10/01/2027** | | | 🔴 **Fecha límite de los 30 microtests** |
+
+> La semana 8 figuraba en el calendario original del 21 al 25/12; se traslada a la primera semana de enero por el receso institucional. Si el aula virtual publica otra fecha, prevalece la del aula.
 
 📅 Importa todas las fechas en tu calendario: [`calendario/curso-mvdc-2026.ics`](calendario/curso-mvdc-2026.ics)
 

@@ -1,6 +1,6 @@
 # Semana 8 · Repaso y examen
 
-- **Fechas:** 21/12/2026 – 25/12/2026
+- **Fechas:** 04/01/2027 – 08/01/2027 (tras el receso institucional del 21/12 al 03/01)
 - **Temario:** Temas 1–10
 - **Sesión síncrona:** Clase 8 · Repaso (90 min) — día y hora: *por confirmar en el aula virtual*
 - **Cuaderno:** [`clase-08-repaso.ipynb`](clase-08-repaso.ipynb)
