@@ -8,6 +8,7 @@ Si encuentras otra, coméntala en el foro «Pregúntale a tu profesor» del aula
 |---|---|---|---|
 | 1 | Ejercicio 2, criterio de clasificación bajo la Tabla 7 | ITM si $S_t-K<0$, OTM si $S_t-K>0$ | Para una **call** es al revés: ITM si $S_t>K$, OTM si $S_t<K$. La tabla de la solución sí es correcta. |
 | 1 | Tabla 5 | OTM = *on the money* | OTM = *out of the money*. |
+| 1 | Ejemplo 7 (apalancamiento) | Beneficio de 2500 € y rendimiento del 500 % | 2500 € es el **pago** de las 250 calls; descontando la prima (500 €), el beneficio neto es 2000 € (**+400 %**). |
 | 3 | Sección 3.3, cobertura delta con prima 6.25 | Deuda final 2 493 750 y ganancia 6 250 | Se redondeó $e^{0.048}\approx 1.05$. Con el factor exacto: deuda 2 491 780.31 y ganancia **8 219.69** en ambos escenarios (lo esencial —que coincidan— se mantiene). |
 | 3 | Ejercicio 2 | $2\,383\,000\,e^{0.048}=2\,500\,000$ | Mismo redondeo; con la prima justa 6.171655 la ganancia es exactamente 0. |
 | 6 | Tabla 1 y texto | Fechas de julio–agosto 2019 que incluyen fines de semana; el texto habla de 25/08–21/09 | Las fechas no son coherentes, pero los **precios** sí reproducen todos los resultados (μ, σ, ECM, EPAM). En el repo se usa el índice $t=0,\dots,27$. |
