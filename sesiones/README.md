@@ -4,6 +4,7 @@ Cada carpeta contiene el guion de la clase (`README.md`) y un cuaderno Jupyter e
 
 | Semana | Fechas | Temas | Sesión | Duración | Cuaderno |
 |---|---|---|---|---|---|
+| 0 | Antes del 02/11/2026 | Python esencial | [Autoestudio para principiantes](semana-00/README.md) | 60–90 min | [semana-00-python-esencial.ipynb](semana-00/semana-00-python-esencial.ipynb) |
 | 1 | 02/11/2026 – 06/11/2026 | Temas 1 y 2 | [Clase 1 y presentación de la asignatura](semana-01/README.md) | 90 min | [clase-01-opciones-y-estrategias-sinteticas.ipynb](semana-01/clase-01-opciones-y-estrategias-sinteticas.ipynb) |
 | 2 | 09/11/2026 – 13/11/2026 | Tema 3 | [Clase 2 y presentación de la Actividad 1](semana-02/README.md) | 60 min | [clase-02-arboles-binomiales-monoperiodo.ipynb](semana-02/clase-02-arboles-binomiales-monoperiodo.ipynb) |
 | 3 | 16/11/2026 – 20/11/2026 | Tema 4 | [Clase 3](semana-03/README.md) | 60 min | [clase-03-arboles-multiperiodo-hull-white.ipynb](semana-03/clase-03-arboles-multiperiodo-hull-white.ipynb) |
