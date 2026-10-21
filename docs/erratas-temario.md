@@ -11,6 +11,8 @@ Si encuentras otra, coméntala en el foro «Pregúntale a tu profesor» del aula
 | 1 | Ejemplo 7 (apalancamiento) | Beneficio de 2500 € y rendimiento del 500 % | 2500 € es el **pago** de las 250 calls; descontando la prima (500 €), el beneficio neto es 2000 € (**+400 %**). |
 | 3 | Sección 3.3, cobertura delta con prima 6.25 | Deuda final 2 493 750 y ganancia 6 250 | Se redondeó $e^{0.048}\approx 1.05$. Con el factor exacto: deuda 2 491 780.31 y ganancia **8 219.69** en ambos escenarios (lo esencial —que coincidan— se mantiene). |
 | 3 | Ejercicio 2 | $2\,383\,000\,e^{0.048}=2\,500\,000$ | Mismo redondeo; con la prima justa 6.171655 la ganancia es exactamente 0. |
+| 4 | Sección 4.3, fórmula general de la call y de la put | $(1-q^*)^{n-j}(q^*)^j$ junto a $u^{n-j}d^jS_0$ | Exponentes intercambiados: con $j$ = número de bajadas debe ser $(q^*)^{n-j}(1-q^*)^j$. Con la fórmula impresa saldrían 0.80 (call) y 14.02 (put) en lugar de 11.87 y 1.601; el ejemplo resuelto (expresión (1)) sí es correcto. |
+| 4 | Sección 4.3, último paso de la inducción hacia atrás | $e^{-0.05}(0.7564\cdot 15.85+0.2436\cdot 2.05)$ | El nodo inferior en $t=1$ vale **2.02**; con 2.05 saldría 11.88. La prima 11.87 es correcta. |
 | 6 | Tabla 1 y texto | Fechas de julio–agosto 2019 que incluyen fines de semana; el texto habla de 25/08–21/09 | Las fechas no son coherentes, pero los **precios** sí reproducen todos los resultados (μ, σ, ECM, EPAM). En el repo se usa el índice $t=0,\dots,27$. |
 | 7 | Ejemplo 1 | $e^{-0.05\cdot 1.646}$ | El vencimiento es $T=1.6$; con 1.6 se obtiene $C=8.3164$ (con 1.646 saldría 8.566). |
 | 7 | Cuaderno, ejercicio 6 ($S_0=K=40$, $T=2$) | $d_1=-0.5374$ | $d_1=+0.5374$, $d_2=-0.3111$ (precios $C$ y $P$ correctos). |
