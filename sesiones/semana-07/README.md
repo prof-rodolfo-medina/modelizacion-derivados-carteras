@@ -2,7 +2,7 @@
 
 - **Fechas:** 14/12/2026 – 18/12/2026
 - **Temario:** Tema 10
-- **Sesión síncrona:** Clase 7 y resolución de la Actividad 2 (90 min) — día y hora: *por confirmar en el aula virtual*
+- **Sesión síncrona:** Clase 7 y resolución de la Actividad 2 (90 min) — **miércoles 16/12/2026**, hora por confirmar en el aula virtual
 - **Cuaderno:** [`clase-07-cartera-mixta-capm.ipynb`](clase-07-cartera-mixta-capm.ipynb)
 
 > 📌 Actividad 2 cerrada el lunes 14/12 23:59

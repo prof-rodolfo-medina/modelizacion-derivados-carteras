@@ -2,7 +2,7 @@
 
 - **Fechas:** 23/11/2026 – 27/11/2026
 - **Temario:** Tema 5
-- **Sesión síncrona:** Clase 4 y resolución de la Actividad 1 (90 min) — día y hora: *por confirmar en el aula virtual*
+- **Sesión síncrona:** Clase 4 y resolución de la Actividad 1 (90 min) — **miércoles 25/11/2026**, hora por confirmar en el aula virtual
 - **Cuaderno:** [`clase-04-movimiento-browniano-lognormal.ipynb`](clase-04-movimiento-browniano-lognormal.ipynb)
 
 > 📌 Actividad 1 cerrada el lunes 23/11 23:59

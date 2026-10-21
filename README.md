@@ -19,18 +19,20 @@ revisar las entregas.
 
 ## Calendario
 
+Las sesiones síncronas son los **miércoles** (hora por confirmar en el aula virtual).
+
 | Sem. | Fechas | Temas | Sesión síncrona | Evaluación |
 |---:|---|---|---|---|
 | 0 | antes del 02/11 | Python esencial (autoestudio, opcional) | — · [cuaderno](sesiones/semana-00/) | — |
-| 1 | 02/11 – 06/11 | 1. Introducción a las opciones · 2. Estrategias sintéticas | [Clase 1](sesiones/semana-01/) y presentación (90′) | Microtests 1.x, 2.x |
-| 2 | 09/11 – 13/11 | 3. Árboles binomiales I | [Clase 2](sesiones/semana-02/) y **presentación Actividad 1** (60′) | Microtests 3.x |
-| 3 | 16/11 – 20/11 | 4. Árboles binomiales II · Hull-White | [Clase 3](sesiones/semana-03/) (60′) | Microtests 4.x |
-| 4 | 23/11 – 27/11 | 5. Modelo log-normal | [Clase 4](sesiones/semana-04/) y **resolución Actividad 1** (90′) | 🔴 **Actividad 1: lun 23/11 23:59** · Microtests 5.x |
-| 5 | 30/11 – 04/12 | 6. Estimación y predicción · 7. Black-Scholes | [Clase 5](sesiones/semana-05/) y **presentación Actividad 2** (60′) | Microtests 6.x, 7.x |
-| 6 | 07/12 – 11/12 | 8. Fundamentos de carteras · 9. Markowitz | [Clase 6](sesiones/semana-06/) (60′) | Microtests 8.x, 9.x |
-| 7 | 14/12 – 18/12 | 10. Cartera mixta y CAPM | [Clase 7](sesiones/semana-07/) y **resolución Actividad 2** (90′) | 🔴 **Actividad 2: lun 14/12 23:59** · Microtests 10.x |
+| 1 | 02/11 – 06/11 | 1. Introducción a las opciones · 2. Estrategias sintéticas | **mié 04/11** · [Clase 1](sesiones/semana-01/) y presentación (90′) | Microtests 1.x, 2.x |
+| 2 | 09/11 – 13/11 | 3. Árboles binomiales I | **mié 11/11** · [Clase 2](sesiones/semana-02/) y **presentación Actividad 1** (60′) | Microtests 3.x |
+| 3 | 16/11 – 20/11 | 4. Árboles binomiales II · Hull-White | **mié 18/11** · [Clase 3](sesiones/semana-03/) (60′) | Microtests 4.x |
+| 4 | 23/11 – 27/11 | 5. Modelo log-normal | **mié 25/11** · [Clase 4](sesiones/semana-04/) y **resolución Actividad 1** (90′) | 🔴 **Actividad 1: lun 23/11 23:59** · Microtests 5.x |
+| 5 | 30/11 – 04/12 | 6. Estimación y predicción · 7. Black-Scholes | **mié 02/12** · [Clase 5](sesiones/semana-05/) y **presentación Actividad 2** (60′) | Microtests 6.x, 7.x |
+| 6 | 07/12 – 11/12 | 8. Fundamentos de carteras · 9. Markowitz | **mié 09/12** · [Clase 6](sesiones/semana-06/) (60′) | Microtests 8.x, 9.x |
+| 7 | 14/12 – 18/12 | 10. Cartera mixta y CAPM | **mié 16/12** · [Clase 7](sesiones/semana-07/) y **resolución Actividad 2** (90′) | 🔴 **Actividad 2: lun 14/12 23:59** · Microtests 10.x |
 | — | 21/12 – 03/01 | *Receso institucional (Navidad y Año Nuevo)* | — | — |
-| 8 | 04/01 – 08/01/2027 | Repaso | [Clase 8](sesiones/semana-08/) · Repaso (90′) | **Examen** |
+| 8 | 04/01 – 08/01/2027 | Repaso | **mié 06/01** · [Clase 8](sesiones/semana-08/) · Repaso (90′) | **Examen** |
 | — | **10/01/2027** | | | 🔴 **Fecha límite de los 30 microtests** |
 
 > La semana 8 figuraba en el calendario original del 21 al 25/12; se traslada a la primera semana de enero por el receso institucional. Si el aula virtual publica otra fecha, prevalece la del aula.

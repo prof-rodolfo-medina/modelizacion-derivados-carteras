@@ -2,7 +2,7 @@
 
 - **Fechas:** 07/12/2026 – 11/12/2026
 - **Temario:** Temas 8 y 9
-- **Sesión síncrona:** Clase 6 (60 min) — día y hora: *por confirmar en el aula virtual*
+- **Sesión síncrona:** Clase 6 (60 min) — **miércoles 09/12/2026**, hora por confirmar en el aula virtual
 - **Cuaderno:** [`clase-06-carteras-minimo-riesgo-markowitz.ipynb`](clase-06-carteras-minimo-riesgo-markowitz.ipynb)
 
 > 📌 Recordatorio: Actividad 2 vence el lunes 14/12

@@ -2,7 +2,7 @@
 
 - **Fechas:** 02/11/2026 – 06/11/2026
 - **Temario:** Temas 1 y 2
-- **Sesión síncrona:** Clase 1 y presentación de la asignatura (90 min) — día y hora: *por confirmar en el aula virtual*
+- **Sesión síncrona:** Clase 1 y presentación de la asignatura (90 min) — **miércoles 04/11/2026**, hora por confirmar en el aula virtual
 - **Cuaderno:** [`clase-01-opciones-y-estrategias-sinteticas.ipynb`](clase-01-opciones-y-estrategias-sinteticas.ipynb)
 
 ## Guion de la sesión

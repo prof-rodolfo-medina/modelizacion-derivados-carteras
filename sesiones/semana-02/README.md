@@ -2,7 +2,7 @@
 
 - **Fechas:** 09/11/2026 – 13/11/2026
 - **Temario:** Tema 3
-- **Sesión síncrona:** Clase 2 y presentación de la Actividad 1 (60 min) — día y hora: *por confirmar en el aula virtual*
+- **Sesión síncrona:** Clase 2 y presentación de la Actividad 1 (60 min) — **miércoles 11/11/2026**, hora por confirmar en el aula virtual
 - **Cuaderno:** [`clase-02-arboles-binomiales-monoperiodo.ipynb`](clase-02-arboles-binomiales-monoperiodo.ipynb)
 
 > 📌 Actividad 1 publicada → entrega **23/11/2026 23:59**

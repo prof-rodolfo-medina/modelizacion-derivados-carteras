@@ -2,7 +2,7 @@
 
 - **Fechas:** 16/11/2026 – 20/11/2026
 - **Temario:** Tema 4
-- **Sesión síncrona:** Clase 3 (60 min) — día y hora: *por confirmar en el aula virtual*
+- **Sesión síncrona:** Clase 3 (60 min) — **miércoles 18/11/2026**, hora por confirmar en el aula virtual
 - **Cuaderno:** [`clase-03-arboles-multiperiodo-hull-white.ipynb`](clase-03-arboles-multiperiodo-hull-white.ipynb)
 
 > 📌 Recordatorio: Actividad 1 vence el lunes 23/11

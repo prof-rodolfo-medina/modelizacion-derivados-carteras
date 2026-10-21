@@ -116,4 +116,68 @@ ACTION:DISPLAY
 DESCRIPTION:MVDC · Fecha límite microtests (23:59)
 END:VALARM
 END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-01@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261104
+DTEND;VALUE=DATE:20261105
+SUMMARY:MVDC · Sesión síncrona 1 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-02@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261111
+DTEND;VALUE=DATE:20261112
+SUMMARY:MVDC · Sesión síncrona 2 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-03@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261119
+SUMMARY:MVDC · Sesión síncrona 3 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-04@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:MVDC · Sesión síncrona 4 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-05@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261202
+DTEND;VALUE=DATE:20261203
+SUMMARY:MVDC · Sesión síncrona 5 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-06@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:MVDC · Sesión síncrona 6 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-07@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20261216
+DTEND;VALUE=DATE:20261217
+SUMMARY:MVDC · Sesión síncrona 7 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
+BEGIN:VEVENT
+UID:mvdc-2026-sesion-08@prof-rodolfo-medina
+DTSTAMP:20261021T000000Z
+DTSTART;VALUE=DATE:20270106
+DTEND;VALUE=DATE:20270107
+SUMMARY:MVDC · Sesión síncrona 8 (miércoles)
+DESCRIPTION:Hora por confirmar en el aula virtual
+END:VEVENT
 END:VCALENDAR
