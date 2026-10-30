@@ -2,7 +2,7 @@
 
 - **Fechas:** 30/11/2026 – 04/12/2026
 - **Temario:** Temas 6 y 7
-- **Sesión síncrona:** Clase 5 y presentación de la Actividad 2 (60 min) — **miércoles 02/12/2026**, hora por confirmar en el aula virtual
+- **Sesión síncrona:** Clase 5 y presentación de la Actividad 2 (60 min) — **miércoles 02/12/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-05-estimacion-lognormal-black-scholes.ipynb`](clase-05-estimacion-lognormal-black-scholes.ipynb)
 
 > 📌 Actividad 2 publicada → entrega **14/12/2026 23:59**

@@ -19,7 +19,7 @@ revisar las entregas.
 
 ## Calendario
 
-Las sesiones síncronas son los **miércoles** (hora por confirmar en el aula virtual).
+Las sesiones síncronas son los **miércoles a las 20:00 h (Ciudad de México)**.
 
 | Sem. | Fechas | Temas | Sesión síncrona | Evaluación |
 |---:|---|---|---|---|
@@ -31,11 +31,11 @@ Las sesiones síncronas son los **miércoles** (hora por confirmar en el aula vi
 | 5 | 30/11 – 04/12 | 6. Estimación y predicción · 7. Black-Scholes | **mié 02/12** · [Clase 5](sesiones/semana-05/) y **presentación Actividad 2** (60′) | Microtests 6.x, 7.x |
 | 6 | 07/12 – 11/12 | 8. Fundamentos de carteras · 9. Markowitz | **mié 09/12** · [Clase 6](sesiones/semana-06/) (60′) | Microtests 8.x, 9.x |
 | 7 | 14/12 – 18/12 | 10. Cartera mixta y CAPM | **mié 16/12** · [Clase 7](sesiones/semana-07/) y **resolución Actividad 2** (90′) | 🔴 **Actividad 2: lun 14/12 23:59** · Microtests 10.x |
-| — | 21/12 – 03/01 | *Receso institucional (Navidad y Año Nuevo)* | — | — |
+| — | 21/12 – 03/01 | *Periodo no lectivo* | — | — |
 | 8 | 04/01 – 08/01/2027 | Repaso | **mié 06/01** · [Clase 8](sesiones/semana-08/) · Repaso (90′) | **Examen** |
 | — | **10/01/2027** | | | 🔴 **Fecha límite de los 30 microtests** |
 
-> La semana 8 figuraba en el calendario original del 21 al 25/12; se traslada a la primera semana de enero por el receso institucional. Si el aula virtual publica otra fecha, prevalece la del aula.
+> Fechas según la programación semanal oficial: del 21/12/2026 al 03/01/2027 es periodo no lectivo y la semana 8 (repaso y examen) es del 04 al 08/01/2027. Si el aula virtual publica otra fecha, prevalece la del aula.
 
 📅 Importa todas las fechas en tu calendario: [`calendario/curso-mvdc-2026.ics`](calendario/curso-mvdc-2026.ics)
 

@@ -1,8 +1,8 @@
 # Semana 8 · Repaso y examen
 
-- **Fechas:** 04/01/2027 – 08/01/2027 (tras el receso institucional del 21/12 al 03/01)
+- **Fechas:** 04/01/2027 – 08/01/2027 (tras el periodo no lectivo del 21/12 al 03/01)
 - **Temario:** Temas 1–10
-- **Sesión síncrona:** Clase 8 · Repaso (90 min) — **miércoles 06/01/2027**, hora por confirmar en el aula virtual
+- **Sesión síncrona:** Clase 8 · Repaso (90 min) — **miércoles 06/01/2027**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-08-repaso.ipynb`](clase-08-repaso.ipynb)
 
 > 📌 Microtests: fecha límite **10/01/2027 23:59**
