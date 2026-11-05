@@ -2,6 +2,8 @@
 
 Las sesiones síncronas son los **miércoles a las 20:00 h (Ciudad de México)**. Cada carpeta contiene el guion de la clase (`README.md`) y un cuaderno Jupyter ejecutable (local o en Google Colab).
 
+> 🔁 **¿Programas en R?** Las sesiones 1 y 2 incluyen un script `.R` equivalente al cuaderno, para comparar y migrar a Python. Ver [ejemplos en R](../r/README.md).
+
 | Semana | Fechas | Sesión (miércoles) | Temas | Guion | Duración | Cuaderno |
 |---|---|---|---|---|---|---|
 | 0 | Antes del 02/11/2026 | — | Python esencial | [Autoestudio para principiantes](semana-00/README.md) | 60–90 min | [semana-00-python-esencial.ipynb](semana-00/semana-00-python-esencial.ipynb) |

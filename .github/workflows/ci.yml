@@ -28,3 +28,18 @@ jobs:
             jupyter nbconvert --to notebook --execute --output-dir /tmp/nb "$nb"
             echo "::endgroup::"
           done
+
+  ejemplos-r:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+      - name: Pruebas de la versión en R
+        run: Rscript r/pruebas.R
+      - name: Ejecutar los scripts de R de las sesiones
+        run: |
+          for s in sesiones/*/*.R; do
+            echo "::group::$s"
+            Rscript "$s"
+            echo "::endgroup::"
+          done

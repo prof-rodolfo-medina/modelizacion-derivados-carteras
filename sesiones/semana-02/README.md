@@ -4,6 +4,7 @@
 - **Temario:** Tema 3
 - **Sesión síncrona:** Clase 2 y presentación de la Actividad 1 (60 min) — **miércoles 11/11/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-02-arboles-binomiales-monoperiodo.ipynb`](clase-02-arboles-binomiales-monoperiodo.ipynb)
+- **Versión en R (apoyo):** [`clase-02-arboles-binomiales-monoperiodo.R`](clase-02-arboles-binomiales-monoperiodo.R) — mismas secciones que el cuaderno; las actividades se entregan en Python. Ver [ejemplos en R](../../r/README.md).
 
 > 📌 Actividad 1 publicada → entrega **23/11/2026 23:59**
 

@@ -4,6 +4,7 @@
 - **Temario:** Temas 1 y 2
 - **Sesión síncrona:** Clase 1 y presentación de la asignatura (90 min) — **miércoles 04/11/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-01-opciones-y-estrategias-sinteticas.ipynb`](clase-01-opciones-y-estrategias-sinteticas.ipynb)
+- **Versión en R (apoyo):** [`clase-01-opciones-y-estrategias-sinteticas.R`](clase-01-opciones-y-estrategias-sinteticas.R) — mismas secciones que el cuaderno; las actividades se entregan en Python. Ver [ejemplos en R](../../r/README.md).
 
 ## Guion de la sesión
 

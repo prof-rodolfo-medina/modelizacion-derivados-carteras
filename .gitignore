@@ -27,3 +27,9 @@ Thumbs.db
 !.vscode/extensions.json
 !.vscode/settings.json
 .idea/
+
+# R
+Rplots.pdf
+.Rhistory
+.RData
+.Rproj.user/
