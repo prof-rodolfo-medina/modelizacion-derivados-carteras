@@ -130,7 +130,36 @@ Cada resultado numérico de los apuntes está verificado en [`tests/test_temario
 
 ### En la Biblioteca Virtual de UNIR
 
+Los títulos anteriores no están en la Biblioteca Virtual. Estos sí, y cubren el temario:
+
+> ⭐ **Referencia principal:** Casanovas Ramón, M. (2015). *Opciones financieras* (7.ª ed.). Ediciones Pirámide. [Leer en eLibro](https://elibro.net/es/ereader/unir/49093)
+
+**Opciones y derivados (temas 1–4 y 7)**
+
+- Lamothe Fernández, P. (2006). *Opciones financieras: productos estructurados* (3.ª ed.). McGraw-Hill España. [Leer en eLibro](https://elibro.net/es/ereader/unir/50298)
+- Bertrán Jordana, J. y Gracia Ramos, M. C. (2019). *Instrumentos financieros derivados y gestión del riesgo*. Delta Publicaciones. [Leer en eLibro](https://elibro.net/es/ereader/unir/227434)
+- Rona Szekely, J. Z. (2025). *Guía práctica de los instrumentos financieros derivados* (3.ª ed.). Fondo Editorial de la Pontificia Universidad Católica del Perú. [Leer en eLibro](https://elibro.net/es/ereader/unir/289629)
+- Rodríguez Aranday, F. (2020). *Finanzas internacionales y productos derivados*. Instituto Mexicano de Contadores Públicos. [Leer en eLibro](https://elibro.net/es/ereader/unir/174898)
+- Iacus, S. M. (2011). *Option Pricing and Estimation of Financial Models with R*. Wiley. [Leer en eLibro](https://elibro.net/es/ereader/unir/182859)
+
+**Procesos estocásticos y modelo log-normal (temas 5 y 6)**
+
+- Braumann, C. A. (2019). *Introduction to Stochastic Differential Equations with Applications to Modelling in Biology and Finance*. Wiley. [Leer en eLibro](https://elibro.net/es/ereader/unir/189244)
+- Ólafsson, S., Nel, D. y Chin, E. (2014). *Problems and Solutions in Mathematical Finance: Stochastic Calculus*. Wiley. [Leer en eLibro](https://elibro.net/es/ereader/unir/181542)
+- Núñez Velázquez, J. J. (2011). *Análisis dinámico mediante procesos estocásticos para actuarios y finanzas*. Editorial Universidad de Alcalá. [Leer en eLibro](https://elibro.net/es/ereader/unir/53550)
+- Jimeno Moreno, J. P. (2012). *Los mercados financieros y sus matemáticas*. Delta Publicaciones. [Leer en eLibro](https://elibro.net/es/ereader/unir/42490)
+
+**Carteras, Markowitz y CAPM (temas 8–10)**
+
+- García Boza, J. (2015). *Inversiones financieras: selección de carteras, teoría y práctica*. Ediciones Pirámide. [Leer en eLibro](https://elibro.net/es/ereader/unir/49025)
+- Berstein Kiguel, E. (2022). *Introducción al análisis de carteras de inversión*. RIL editores. [Leer en eLibro](https://elibro.net/es/ereader/unir/266718)
+- Kim, D. y Francis, J. C. (2013). *Modern Portfolio Theory: Foundations, Analysis, and New Developments*. Wiley. [Leer en eLibro](https://elibro.net/es/ereader/unir/177925)
+- Fabozzi, F. J. y Markowitz, H. M. (2011). *The Theory and Practice of Investment Management* (2.ª ed.). Wiley. [Leer en eLibro](https://elibro.net/es/ereader/unir/181540)
+
+**Finanzas generales y programación**
+
 - Chu Rubio, M. (2019). *Finanzas aplicadas: teoría y práctica* (4.ª ed.). Ediciones de la U. 414 p. [Leer en eLibro](https://elibro.net/es/ereader/unir/127073)
+- Ramírez Gil, C. M. (2021). *Python para finanzas: curso práctico*. RA-MA Editorial. [Leer en eLibro](https://elibro.net/es/ereader/unir/222660)
 
 > Los enlaces se abren con tu usuario de UNIR. Por derechos de autor, este repositorio no aloja los textos de la bibliografía.
 
