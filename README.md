@@ -128,6 +128,12 @@ Cada resultado numérico de los apuntes está verificado en [`tests/test_temario
 - Wilmott, P., Howison, S. y Dewynne, J. (1995). *The Mathematics of Financial Derivatives: A Student Introduction*. Cambridge University Press.
 - Allen, E. (2007). *Modeling with Itô Stochastic Differential Equations*. Springer.
 
+### En la Biblioteca Virtual de UNIR
+
+- Chu Rubio, M. (2019). *Finanzas aplicadas: teoría y práctica* (4.ª ed.). Ediciones de la U. 414 p. [Leer en eLibro](https://elibro.net/es/ereader/unir/127073)
+
+> Los enlaces se abren con tu usuario de UNIR. Por derechos de autor, este repositorio no aloja los textos de la bibliografía.
+
 ## Licencia
 
 Código bajo licencia [MIT](LICENSE). Textos y cuadernos bajo [CC BY-NC-SA 4.0](LICENSE-CONTENIDO.md). 
