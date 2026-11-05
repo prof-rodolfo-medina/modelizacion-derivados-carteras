@@ -25,5 +25,5 @@
 3. La celda de cada ejercicio te dice si es correcto. Las soluciones están al final.
 4. Termina con la lista de comprobación de la sección 9.
 
-Más orientación: [Guía para principiantes](../../docs/guia-principiantes.md) · [Chuleta de Python](../../docs/chuleta-python.md).
+Más orientación: [Guía para principiantes](../../docs/guia-principiantes.md) · [Guía rápida de Python](../../docs/guia-rapida-python.md).
 Dudas: foro «Pregúntale a tu profesor» del aula virtual.

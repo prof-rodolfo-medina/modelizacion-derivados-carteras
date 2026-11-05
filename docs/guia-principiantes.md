@@ -14,7 +14,7 @@ aprender en unas horas antes de que empiece el curso.
 |---|---|---|
 | 1 | Abrir Google Colab con tu cuenta de Google (sección 2 de esta guía) | 10 min |
 | 2 | Hacer el cuaderno [**Semana 0 · Python esencial**](../sesiones/semana-00/) con sus 7 ejercicios autocorregibles | 60–90 min |
-| 3 | Tener a mano la [**chuleta de Python**](chuleta-python.md) | — |
+| 3 | Tener a mano la [**guía rápida de Python**](guia-rapida-python.md) | — |
 | 4 | Abrir el [cuaderno de la Clase 1](../sesiones/semana-01/) y ejecutarlo completo, sin intentar entenderlo todo | 20 min |
 
 Con esto llegas a la primera sesión sabiendo ejecutar, modificar y leer el código que se usará en clase.

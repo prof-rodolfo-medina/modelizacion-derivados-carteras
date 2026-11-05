@@ -55,7 +55,7 @@ Requisitos comunes de entrega, rúbricas y plantillas: [`actividades/`](activida
 
 ## Empezar
 
-> 🧭 **¿Poca experiencia programando?** Empieza por la [Guía para principiantes](docs/guia-principiantes.md) y el cuaderno de autoestudio [**Semana 0 · Python esencial**](sesiones/semana-00/) (60–90 min, con ejercicios autocorregibles). Ten a mano la [chuleta de Python](docs/chuleta-python.md).
+> 🧭 **¿Poca experiencia programando?** Empieza por la [Guía para principiantes](docs/guia-principiantes.md) y el cuaderno de autoestudio [**Semana 0 · Python esencial**](sesiones/semana-00/) (60–90 min, con ejercicios autocorregibles). Ten a mano la [guía rápida de Python](docs/guia-rapida-python.md).
 
 **Opción A — Google Colab (sin instalar nada).** Abre cualquier cuaderno de `sesiones/` y pulsa el botón 
 *Open in Colab*; la primera celda instala la biblioteca del curso automáticamente.
@@ -101,7 +101,7 @@ Para recibir el material nuevo de cada semana: `git pull` (o *Sync Changes* en V
 ├── plantillas/          Formato básico para documentos evaluables
 ├── herramientas/        Verificador de entregas, descarga de datos del IBEX-35, generador de datos
 ├── calendario/          Fechas del curso en formato .ics
-└── docs/                Guía del entorno, guía para principiantes, chuleta de Python y erratas
+└── docs/                Guía del entorno, guía para principiantes, guía rápida de Python y erratas
 ```
 
 ## La biblioteca `mvdc`

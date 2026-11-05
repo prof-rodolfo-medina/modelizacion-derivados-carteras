@@ -1,4 +1,4 @@
-# Chuleta de Python para el curso
+# Guía rápida de Python para el curso
 
 Referencia rápida de lo que se usa en el curso. Se supone que ya ejecutaste:
 
