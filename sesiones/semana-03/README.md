@@ -4,6 +4,7 @@
 - **Temario:** Tema 4
 - **Sesión síncrona:** Clase 3 (60 min) — **miércoles 18/11/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-03-arboles-multiperiodo-hull-white.ipynb`](clase-03-arboles-multiperiodo-hull-white.ipynb)
+- **Versión en R (apoyo):** [`clase-03-arboles-multiperiodo-hull-white.R`](clase-03-arboles-multiperiodo-hull-white.R) — mismas secciones que el cuaderno; las actividades se entregan en Python. Ver [ejemplos en R](../../r/README.md).
 
 > 📌 Recordatorio: Actividad 1 vence el lunes 23/11
 

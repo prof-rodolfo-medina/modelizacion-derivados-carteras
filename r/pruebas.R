@@ -47,4 +47,38 @@ comprobar("cobertura perfecta", cerca(cob$ganancia_sube, cob$ganancia_baja))
 comprobar("Su > Sd", inherits(try(one_period_price(100, 90, 120, 105, 0.05),
                                   silent = TRUE), "try-error"))
 
+# --- Tema 4 -------------------------------------------------------------------
+comprobar("q* del árbol del tema", cerca(risk_neutral_q(1.1, 0.9, 0.05), 0.7563554818801203))
+comprobar("q* fuera de (0,1) da error", inherits(try(risk_neutral_q(1.1, 0.9, 0.2),
+                                                     silent = TRUE), "try-error"))
+S <- stock_tree(100, 1.1, 0.9, 3)
+comprobar("árbol del subyacente", cerca(S[, 4], c(133.1, 108.9, 89.1, 72.9)) &&
+                                  is.na(S[2, 1]) && cerca(S[2, 3], 99))
+arb <- option_tree(100, 105, 1.1, 0.9, 0.05, 3)
+comprobar("call por inducción (Figura 7)", cerca(arb$V[1, 1], 11.868641351285918))
+comprobar("nodo t = 1 abajo (errata 2.05)", cerca(arb$V[2, 2], 2.018771089514609))
+comprobar("inducción = fórmula cerrada",
+          cerca(arb$V[1, 1], binomial_price(100, 105, 1.1, 0.9, 0.05, 3)))
+comprobar("put K = 100 (fórmula cerrada)",
+          cerca(binomial_price(100, 100, 1.1, 0.9, 0.05, 3, kind = "put"), 1.6010577694145187))
+comprobar("put K = 100 (inducción)",
+          cerca(option_tree(100, 100, 1.1, 0.9, 0.05, 3, kind = "put")$V[1, 1], 1.6010577694145187))
+comprobar("call K = 100", cerca(binomial_price(100, 100, 1.1, 0.9, 0.05, 3), 15.530260126908768))
+comprobar("sensibilidad u = 1.2, d = 0.8",
+          cerca(binomial_price(100, 105, 1.2, 0.8, 0.05, 3), 18.32985139672265))
+comprobar("sensibilidad put r = 0.08",
+          cerca(binomial_price(100, 105, 1.1, 0.9, 0.08, 3, kind = "put"), 0.2548583368039528))
+u200 <- exp(0.2 * sqrt(1 / 200))
+comprobar("n > 60 (dbinom)", cerca(binomial_price(100, 100, u200, 1 / u200, 0.05 / 200, 200),
+                                   10.440591259859852))
+serie <- cargar("tema6_ibex_28dias.csv")$S
+comprobar("datos del Tema 6", length(serie) == 28 && serie[1] == 24.38)
+hw <- hull_white_ud(serie)
+comprobar("Hull-White u", cerca(hw$u, 1.0171082566580978))
+comprobar("Hull-White d", cerca(hw$d, 0.9885731600841047))
+comprobar("Hull-White media y desviación",
+          cerca(hw$media, 0.0028407083711013722) && cerca(hw$desv, 0.014267548286996582))
+comprobar("call ATM a 5 días con Hull-White",
+          cerca(binomial_price(serie[28], serie[28], hw$u, hw$d, 0.03 / 252, 5), 0.320881233868429))
+
 cat(sprintf("Pruebas de R: %d comprobaciones correctas.\n", n_ok))

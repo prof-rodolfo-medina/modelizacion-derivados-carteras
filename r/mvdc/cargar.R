@@ -8,7 +8,7 @@
 #  Uso:   cargar_mvdc()            # carga todos los módulos disponibles
 # =============================================================================
 
-cargar_mvdc <- function(modulos = c("payoffs.R", "binomial.R")) {
+cargar_mvdc <- function(modulos = c("payoffs.R", "binomial.R", "datos.R")) {
   url_base <- paste0("https://raw.githubusercontent.com/prof-rodolfo-medina/",
                      "modelizacion-derivados-carteras/main/r/mvdc/")
 

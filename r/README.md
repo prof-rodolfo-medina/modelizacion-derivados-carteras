@@ -11,7 +11,8 @@ Material de apoyo para quien ya programa en **R** y quiere pasar a Python, o al 
 | Archivo | Equivale en Python a | Contenido |
 |---|---|---|
 | [`mvdc/payoffs.R`](mvdc/payoffs.R) | `src/mvdc/payoffs.py` | Temas 1 y 2: pay-off, B/P, ITM/ATM/OTM, estrategias, puntos de equilibrio, gráficas |
-| [`mvdc/binomial.R`](mvdc/binomial.R) | `src/mvdc/binomial.py` (Tema 3) | Árbol monoperiodo (Métodos I y II) y cobertura delta |
+| [`mvdc/binomial.R`](mvdc/binomial.R) | `src/mvdc/binomial.py` | Tema 3: árbol monoperiodo (Métodos I y II) y cobertura delta. Tema 4: árbol multiperiodo, inducción hacia atrás, fórmula cerrada y calibración de Hull-White |
+| [`mvdc/datos.R`](mvdc/datos.R) | `src/mvdc/datos.py` | `cargar(nombre)`: lee un CSV de `datos/` (o de GitHub si no lo encuentra) |
 | [`mvdc/cargar.R`](mvdc/cargar.R) | `import mvdc` | Carga las funciones desde el repositorio o, si no lo encuentra, desde GitHub |
 | [`pruebas.R`](pruebas.R) | `tests/` | Comprueba que R y Python dan los mismos resultados |
 
@@ -21,6 +22,7 @@ Scripts de las sesiones (junto al cuaderno de Python de cada semana):
 |---|---|---|
 | Clase 1 · Temas 1 y 2 | [`clase-01-opciones-y-estrategias-sinteticas.R`](../sesiones/semana-01/clase-01-opciones-y-estrategias-sinteticas.R) | [`.ipynb`](../sesiones/semana-01/clase-01-opciones-y-estrategias-sinteticas.ipynb) |
 | Clase 2 · Tema 3 | [`clase-02-arboles-binomiales-monoperiodo.R`](../sesiones/semana-02/clase-02-arboles-binomiales-monoperiodo.R) | [`.ipynb`](../sesiones/semana-02/clase-02-arboles-binomiales-monoperiodo.ipynb) |
+| Clase 3 · Tema 4 | [`clase-03-arboles-multiperiodo-hull-white.R`](../sesiones/semana-03/clase-03-arboles-multiperiodo-hull-white.R) | [`.ipynb`](../sesiones/semana-03/clase-03-arboles-multiperiodo-hull-white.ipynb) |
 
 Las funciones de R tienen **el mismo nombre y los mismos argumentos** que en Python
 (`long_call(ST, K, C)`, `strategy(ST, legs)`, `one_period_price(S0, Su, Sd, K, r, tau, kind)`…),
@@ -55,6 +57,16 @@ Solo hace falta **R ≥ 4.2**; no se usa ningún paquete adicional (gráficos ba
 | Último elemento | `x[-1]` | `x[length(x)]` (en R, `x[-1]` *quita* el primero) |
 | Recorrer índices | `for i in range(n):` | `for (i in seq_len(n)) { }` |
 | Bloques | sangría | llaves `{ }` |
+| Matriz (árbol) | `tree[j, t]`, sin nodo = `np.nan` | `tree[j + 1, t + 1]`, sin nodo = `NA` |
+| Recorrer hacia atrás | `for t in range(n - 1, -1, -1):` | `for (t in rev(seq_len(n)) - 1) { }` |
+| Quitar el último / el primero | `S[:-1]`, `S[1:]` | `S[-length(S)]`, `S[-1]` |
+| Desviación típica muestral | `U.std(ddof=1)` | `sd(U)` (ya divide entre n − 1) |
+| Coeficiente binomial | `math.comb(n, j)` | `choose(n, j)` |
+| Leer un CSV | `pd.read_csv(ruta, index_col=0)` | `read.csv(ruta, row.names = 1)` |
+| Una columna | `df["S"]` | `df$S` |
+| Devolver varios valores | `return V, q` → `V, q = f()` | `list(V = V, q = q)` → `res$V`, `res$q` |
+| Cambiar solo algunos argumentos | `{**base, **cambios}` | `modifyList(base, list(...))` |
+| Capturar un error | `try: … except ValueError as e:` | `tryCatch(…, error = function(e) conditionMessage(e))` |
 | Diccionario | `{"tipo": "call", "K": 100}` | `list(tipo = "call", K = 100)` |
 | Acceder a un campo | `d["K"]`, `d.get("prima", 0)` | `d$K`, `if (is.null(d$prima)) 0 else d$prima` |
 | Lista de patas | `[pata1, pata2]` | `list(pata1, pata2)` |

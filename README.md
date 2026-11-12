@@ -57,7 +57,7 @@ Requisitos comunes de entrega, rúbricas y plantillas: [`actividades/`](activida
 
 > 🧭 **¿Poca experiencia programando?** Empieza por la [Guía para principiantes](docs/guia-principiantes.md) y el cuaderno de autoestudio [**Semana 0 · Python esencial**](sesiones/semana-00/) (60–90 min, con ejercicios autocorregibles). Ten a mano la [guía rápida de Python](docs/guia-rapida-python.md).
 
-> 🔁 **¿Vienes de R?** En [`r/`](r/README.md) hay versiones en R de los cuadernos de las sesiones 1 y 2 y una tabla de equivalencias Python ↔ R. Las actividades se entregan en Python.
+> 🔁 **¿Vienes de R?** En [`r/`](r/README.md) hay versiones en R de los cuadernos de las sesiones 1, 2 y 3 y una tabla de equivalencias Python ↔ R. Las actividades se entregan en Python.
 
 **Opción A — Google Colab (sin instalar nada).** Abre cualquier cuaderno de `sesiones/` y pulsa el botón 
 *Open in Colab*; la primera celda instala la biblioteca del curso automáticamente.
