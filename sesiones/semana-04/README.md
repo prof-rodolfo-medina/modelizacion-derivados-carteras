@@ -4,6 +4,7 @@
 - **Temario:** Tema 5
 - **Sesión síncrona:** Clase 4 y resolución de la Actividad 1 (90 min) — **miércoles 25/11/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-04-movimiento-browniano-lognormal.ipynb`](clase-04-movimiento-browniano-lognormal.ipynb)
+- **Versión en R (apoyo):** [`clase-04-movimiento-browniano-lognormal.R`](clase-04-movimiento-browniano-lognormal.R) — mismas secciones que el cuaderno; las actividades se entregan en Python. Ver [ejemplos en R](../../r/README.md).
 
 > 📌 Actividad 1 cerrada el lunes 23/11 23:59
 

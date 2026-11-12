@@ -37,14 +37,20 @@ def gbm_paths(S0, mu, sigma, T=1.0, n_steps=250, n_paths=100, seed=None):
 
 
 def euler_maruyama(S0, mu, sigma, T=1.0, n_steps=250, n_paths=100, seed=None):
-    """Aproximación de Euler-Maruyama: S_{i+1} = S_i + μ S_i Δt + σ S_i ΔW_i."""
+    """
+    Aproximación de Euler-Maruyama: S_{i+1} = S_i + μ S_i Δt + σ S_i ΔW_i.
+
+    Los incrementos ΔW se sortean igual que en ``wiener_paths``: con la misma
+    semilla, ``gbm_paths`` y ``euler_maruyama`` usan exactamente los mismos ΔW
+    y el error se puede medir trayectoria a trayectoria.
+    """
     rng = np.random.default_rng(seed)
     dt = T / n_steps
+    dW = np.sqrt(dt) * rng.standard_normal((n_paths, n_steps))
     S = np.empty((n_paths, n_steps + 1))
     S[:, 0] = S0
     for i in range(n_steps):
-        dW = np.sqrt(dt) * rng.standard_normal(n_paths)
-        S[:, i + 1] = S[:, i] * (1 + mu * dt + sigma * dW)
+        S[:, i + 1] = S[:, i] * (1 + mu * dt + sigma * dW[:, i])
     return np.linspace(0.0, T, n_steps + 1), S
 
 

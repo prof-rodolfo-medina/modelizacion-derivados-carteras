@@ -4,6 +4,7 @@
 - **Temario:** Temas 6 y 7
 - **Sesión síncrona:** Clase 5 y presentación de la Actividad 2 (60 min) — **miércoles 02/12/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-05-estimacion-lognormal-black-scholes.ipynb`](clase-05-estimacion-lognormal-black-scholes.ipynb)
+- **Versión en R (apoyo):** [`clase-05-estimacion-lognormal-black-scholes.R`](clase-05-estimacion-lognormal-black-scholes.R) — mismas secciones que el cuaderno; las actividades se entregan en Python. Ver [ejemplos en R](../../r/README.md).
 
 > 📌 Actividad 2 publicada → entrega **14/12/2026 23:59**
 

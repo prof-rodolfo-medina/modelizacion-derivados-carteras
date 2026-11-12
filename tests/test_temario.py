@@ -118,6 +118,27 @@ def test_tema5_media_varianza_por_simulacion():
     assert S[:, -1].std() == pytest.approx(ln.lognormal_std(S0, mu, sigma, T), rel=1e-2)
 
 
+
+def test_tema5_euler_maruyama_mismos_incrementos():
+    # Con la misma semilla, Euler-Maruyama usa los mismos ΔW que la solución
+    # exacta: el error fuerte baja con Δt (orden 1/2) en lugar de estancarse.
+    S0, mu, sigma, T = 25, 0.10, 0.30, 1.0
+    t, W = ln.wiener_paths(T, 5, 3, seed=4)
+    _, Se = ln.euler_maruyama(S0, mu, sigma, T, n_steps=5, n_paths=3, seed=4)
+    dt = T / 5
+    S = np.full(3, float(S0))
+    for i in range(5):
+        S = S * (1 + mu * dt + sigma * (W[:, i + 1] - W[:, i]))
+    assert np.allclose(Se[:, -1], S)
+    err = []
+    for pasos in (5, 20, 100, 1000):
+        _, Sx = ln.gbm_paths(S0, mu, sigma, T, n_steps=pasos, n_paths=2000, seed=11)
+        _, Se = ln.euler_maruyama(S0, mu, sigma, T, n_steps=pasos, n_paths=2000, seed=11)
+        err.append(np.abs(Sx[:, -1] - Se[:, -1]).mean())
+    assert all(a > b for a, b in zip(err, err[1:]))
+    assert err[-1] < 0.1
+
+
 # --------------------------------------------------------------- Tema 7
 def test_tema7_ejemplos_1_y_2():
     assert bs.bs_call(74.625, 100, 1.6, 0.05, 0.375) == pytest.approx(8.3164, abs=1e-4)

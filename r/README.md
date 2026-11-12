@@ -12,6 +12,8 @@ Material de apoyo para quien ya programa en **R** y quiere pasar a Python, o al 
 |---|---|---|
 | [`mvdc/payoffs.R`](mvdc/payoffs.R) | `src/mvdc/payoffs.py` | Temas 1 y 2: pay-off, B/P, ITM/ATM/OTM, estrategias, puntos de equilibrio, gráficas |
 | [`mvdc/binomial.R`](mvdc/binomial.R) | `src/mvdc/binomial.py` | Tema 3: árbol monoperiodo (Métodos I y II) y cobertura delta. Tema 4: árbol multiperiodo, inducción hacia atrás, fórmula cerrada y calibración de Hull-White |
+| [`mvdc/lognormal.R`](mvdc/lognormal.R) | `src/mvdc/lognormal.py` | Tema 5: proceso de Wiener, movimiento browniano geométrico, Euler-Maruyama, media, desviación y banda del modelo log-normal. Tema 6: estimadores MME, MMV y MMNP, ECM, EPAM y `fit_and_validate` |
+| [`mvdc/black_scholes.R`](mvdc/black_scholes.R) | `src/mvdc/black_scholes.py` | Tema 7: fórmula de Black-Scholes (call y put), paridad put-call, Monte Carlo y convergencia del árbol CRR |
 | [`mvdc/datos.R`](mvdc/datos.R) | `src/mvdc/datos.py` | `cargar(nombre)`: lee un CSV de `datos/` (o de GitHub si no lo encuentra) |
 | [`mvdc/cargar.R`](mvdc/cargar.R) | `import mvdc` | Carga las funciones desde el repositorio o, si no lo encuentra, desde GitHub |
 | [`pruebas.R`](pruebas.R) | `tests/` | Comprueba que R y Python dan los mismos resultados |
@@ -23,6 +25,8 @@ Scripts de las sesiones (junto al cuaderno de Python de cada semana):
 | Clase 1 · Temas 1 y 2 | [`clase-01-opciones-y-estrategias-sinteticas.R`](../sesiones/semana-01/clase-01-opciones-y-estrategias-sinteticas.R) | [`.ipynb`](../sesiones/semana-01/clase-01-opciones-y-estrategias-sinteticas.ipynb) |
 | Clase 2 · Tema 3 | [`clase-02-arboles-binomiales-monoperiodo.R`](../sesiones/semana-02/clase-02-arboles-binomiales-monoperiodo.R) | [`.ipynb`](../sesiones/semana-02/clase-02-arboles-binomiales-monoperiodo.ipynb) |
 | Clase 3 · Tema 4 | [`clase-03-arboles-multiperiodo-hull-white.R`](../sesiones/semana-03/clase-03-arboles-multiperiodo-hull-white.R) | [`.ipynb`](../sesiones/semana-03/clase-03-arboles-multiperiodo-hull-white.ipynb) |
+| Clase 4 · Tema 5 | [`clase-04-movimiento-browniano-lognormal.R`](../sesiones/semana-04/clase-04-movimiento-browniano-lognormal.R) | [`.ipynb`](../sesiones/semana-04/clase-04-movimiento-browniano-lognormal.ipynb) |
+| Clase 5 · Temas 6 y 7 | [`clase-05-estimacion-lognormal-black-scholes.R`](../sesiones/semana-05/clase-05-estimacion-lognormal-black-scholes.R) | [`.ipynb`](../sesiones/semana-05/clase-05-estimacion-lognormal-black-scholes.ipynb) |
 
 Las funciones de R tienen **el mismo nombre y los mismos argumentos** que en Python
 (`long_call(ST, K, C)`, `strategy(ST, legs)`, `one_period_price(S0, Su, Sd, K, r, tau, kind)`…),
@@ -62,6 +66,20 @@ Solo hace falta **R ≥ 4.2**; no se usa ningún paquete adicional (gráficos ba
 | Quitar el último / el primero | `S[:-1]`, `S[1:]` | `S[-length(S)]`, `S[-1]` |
 | Desviación típica muestral | `U.std(ddof=1)` | `sd(U)` (ya divide entre n − 1) |
 | Coeficiente binomial | `math.comb(n, j)` | `choose(n, j)` |
+| Números aleatorios N(0, 1) | `rng = np.random.default_rng(7)`; `rng.standard_normal((m, n))` | `set.seed(7)`; `matrix(rnorm(m * n), nrow = m)` (no salen los mismos números que en NumPy) |
+| Suma acumulada por filas | `np.cumsum(dW, axis=1)` | `t(apply(dW, 1, cumsum))` o un bucle por columnas |
+| Sumar un vector a cada fila | `A + v` (*broadcasting*) | `sweep(A, 2, v, "+")` |
+| Una curva por trayectoria | `plt.plot(t, W.T)` | `matplot(t, t(W), type = "l")` |
+| Varianza / desviación de un vector | `x.var()`, `x.std()` (dividen entre *n*) | `var(x)`, `sd(x)` (dividen entre *n* − 1) |
+| Covarianza de dos vectores | `np.cov(x, y)[0, 1]` | `cov(x, y)` |
+| Densidad log-normal | `lognorm.pdf(x, s=σ√T, scale=S0·e^{(μ-σ²/2)T})` | `dlnorm(x, meanlog = log(S0) + (μ - σ²/2)T, sdlog = σ√T)` |
+| Histograma de densidad | `plt.hist(x, bins=80, density=True)` | `hist(x, breaks = 80, freq = FALSE)` |
+| Diferencias consecutivas | `S[1:] - S[:-1]` | `diff(S)` |
+| Función de distribución normal $N(x)$ | `scipy.stats.norm.cdf(x)` | `pnorm(x)` |
+| Sombrear una banda | `ax.fill_between(t, lo, hi, alpha=0.2)` | `polygon(c(t, rev(t)), c(lo, rev(hi)), col = adjustcolor("steelblue", 0.2), border = NA)` |
+| Fila de una tabla por nombre | `tabla.loc["MME", "mu"]` | `tabla["MME", "mu"]` |
+| Unir tablas | `pd.concat(lista)` / `pd.concat(dic, axis=1)` | `do.call(rbind, lista)` / `do.call(cbind, lista)` |
+| Usar columnas sin repetir el nombre de la tabla | `df.eval(...)` o `df.S0`, `df.K`… | `with(df, f(S0, K))` |
 | Leer un CSV | `pd.read_csv(ruta, index_col=0)` | `read.csv(ruta, row.names = 1)` |
 | Una columna | `df["S"]` | `df$S` |
 | Devolver varios valores | `return V, q` → `V, q = f()` | `list(V = V, q = q)` → `res$V`, `res$q` |

@@ -81,4 +81,66 @@ comprobar("Hull-White media y desviación",
 comprobar("call ATM a 5 días con Hull-White",
           cerca(binomial_price(serie[28], serie[28], hw$u, hw$d, 0.03 / 252, 5), 0.320881233868429))
 
+# --- Tema 5 -------------------------------------------------------------------
+# Las simulaciones de R no reproducen las de NumPy: se comprueban propiedades.
+comprobar("media log-normal", cerca(lognormal_mean(25, 0.10, 1), 27.629272951891192))
+comprobar("desviación log-normal", cerca(lognormal_std(25, 0.10, 0.30, 1), 8.478823984835042))
+b <- confidence_band(25, 0.10, 0.30, 1)
+comprobar("banda al 95 %", cerca(b$lo, 11.01077794161451) && cerca(b$hi, 44.24776796216787))
+w <- wiener_paths(T = 1, n_steps = 100, n_paths = 50000, seed = 1)
+comprobar("Wiener: dimensiones y W(0) = 0",
+          identical(dim(w$W), c(50000L, 101L)) && all(w$W[, 1] == 0) && cerca(w$t[31], 0.3))
+comprobar("Wiener: Var W(0.8) ≈ 0.8", abs(var(w$W[, 81]) - 0.8) < 0.03)
+comprobar("Wiener: Cov(W(0.3), W(0.8)) ≈ 0.3", abs(cov(w$W[, 31], w$W[, 81]) - 0.3) < 0.02)
+g <- gbm_paths(25, 0.10, 0.30, 1, n_steps = 252, n_paths = 20000, seed = 3)
+w <- wiener_paths(1, 252, 20000, seed = 3)
+comprobar("MBG = solución de Itô con el mismo W",
+          cerca(g$S, 25 * exp(sweep(0.30 * w$W, 2, (0.10 - 0.045) * w$t, "+"))))
+ST <- g$S[, 253]
+comprobar("MBG: media simulada ≈ teórica", abs(mean(ST) / 27.629272951891192 - 1) < 0.01)
+comprobar("MBG: desviación simulada ≈ teórica", abs(sd(ST) / 8.478823984835042 - 1) < 0.03)
+err <- sapply(c(5, 20, 100, 1000), function(p) {
+  x <- gbm_paths(25, 0.10, 0.30, 1, n_steps = p, n_paths = 2000, seed = 11)$S[, p + 1]
+  e <- euler_maruyama(25, 0.10, 0.30, 1, n_steps = p, n_paths = 2000, seed = 11)$S[, p + 1]
+  mean(abs(x - e))
+})
+comprobar("Euler-Maruyama: el error baja con los pasos", all(diff(err) < 0) && err[4] < 0.1)
+comprobar("Euler-Maruyama: orden fuerte 1/2", all(err[-1] / err[-4] > 0.25 & err[-1] / err[-4] < 0.75))
+
+# --- Tema 6 -------------------------------------------------------------------
+serie <- cargar("tema6_ibex_28dias.csv")$S
+e <- estimate_mme(serie)
+comprobar("MME", cerca(e$mu, 0.0028416219249687296) && cerca(e$sigma, 0.014455364221935513))
+e <- estimate_mmv(serie)
+comprobar("MMV", cerca(e$mu, 0.0028407083711013722) && cerca(e$sigma, 0.014000841624393258))
+e <- estimate_mmnp(serie)
+comprobar("MMNP (errata: 0.00278, no 0.00284)",
+          cerca(e$mu, 0.0027807104938363412) && cerca(e$sigma, 0.014193261539082753))
+tab <- fit_and_validate(serie)
+comprobar("ECM y EPAM", cerca(tab["MME", "ECM"], 0.5308633881763585) &&
+                        cerca(tab["MMV", "ECM"], 0.5306622328793931) &&
+                        cerca(tab["MMNP", "EPAM_%"], 1.616823649533551))
+b <- confidence_band(serie[1], tab["MME", "mu"], tab["MME", "sigma"], 28)
+comprobar("predicción t = 28 (Tabla 2, fila rotulada 27)",
+          cerca(b$m, 26.399063550528513) && cerca(b$lo, 22.435478325811236) &&
+          cerca(b$hi, 30.36264877524579))
+
+# --- Tema 7 -------------------------------------------------------------------
+d <- d1_d2(74.625, 100, 1.6, 0.05, 0.375)
+comprobar("d1 y d2 del Ejemplo 1", cerca(d$d1, -0.21122879359469918) && cerca(d$d2, -0.685570442619956))
+comprobar("call del Ejemplo 1", cerca(bs_call(74.625, 100, 1.6, 0.05, 0.375), 8.316364366583233))
+comprobar("put del Ejemplo 2", cerca(bs_put(74.625, 100, 1.6, 0.05, 0.375), 26.002999005246814))
+comprobar("bs_price", cerca(bs_price(74.625, 100, 1.6, 0.05, 0.375, "put"), 26.002999005246814))
+comprobar("paridad put-call", abs(put_call_parity_gap(bs_call(74.625, 100, 1.6, 0.05, 0.375),
+                                                      bs_put(74.625, 100, 1.6, 0.05, 0.375),
+                                                      74.625, 100, 1.6, 0.05)) < 1e-12)
+comprobar("ejercicio 6 (errata: d1 > 0)",
+          cerca(d1_d2(40, 40, 2, 0.048, 0.6)$d1, 0.5374011537017761) &&
+          cerca(bs_put(40, 40, 2, 0.048, 0.6), 10.788150288978208))
+comprobar("call de referencia", cerca(bs_call(100, 100, 1, 0.05, 0.2), 10.450583572185565))
+comprobar("árbol CRR, n = 200", cerca(binomial_to_bs(100, 100, 1, 0.05, 0.2, 200), 10.440591259859852))
+comprobar("árbol CRR put, n = 50", cerca(binomial_to_bs(100, 100, 1, 0.05, 0.2, 50, "put"), 5.533633990803816))
+mc <- mc_price(100, 100, 1, 0.05, 0.2)
+comprobar("Monte Carlo dentro de 3 errores estándar", abs(mc$precio - 10.450583572185565) < 3 * mc$error)
+
 cat(sprintf("Pruebas de R: %d comprobaciones correctas.\n", n_ok))
