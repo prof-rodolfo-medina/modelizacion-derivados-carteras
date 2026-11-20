@@ -4,6 +4,7 @@
 - **Temario:** Temas 8 y 9
 - **Sesión síncrona:** Clase 6 (60 min) — **miércoles 09/12/2026**, 20:00 h (Ciudad de México)
 - **Cuaderno:** [`clase-06-carteras-minimo-riesgo-markowitz.ipynb`](clase-06-carteras-minimo-riesgo-markowitz.ipynb)
+- **Versión en R (apoyo):** [`clase-06-carteras-minimo-riesgo-markowitz.R`](clase-06-carteras-minimo-riesgo-markowitz.R) — mismas secciones que el cuaderno; las actividades se entregan en Python. Ver [ejemplos en R](../../r/README.md).
 
 > 📌 Recordatorio: Actividad 2 vence el lunes 14/12
 

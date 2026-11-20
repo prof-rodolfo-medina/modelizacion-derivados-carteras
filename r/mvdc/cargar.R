@@ -9,7 +9,7 @@
 # =============================================================================
 
 cargar_mvdc <- function(modulos = c("payoffs.R", "binomial.R", "lognormal.R",
-                                    "black_scholes.R", "datos.R")) {
+                                    "black_scholes.R", "portfolio.R", "datos.R")) {
   url_base <- paste0("https://raw.githubusercontent.com/prof-rodolfo-medina/",
                      "modelizacion-derivados-carteras/main/r/mvdc/")
 

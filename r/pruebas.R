@@ -143,4 +143,80 @@ comprobar("árbol CRR put, n = 50", cerca(binomial_to_bs(100, 100, 1, 0.05, 0.2,
 mc <- mc_price(100, 100, 1, 0.05, 0.2)
 comprobar("Monte Carlo dentro de 3 errores estándar", abs(mc$precio - 10.450583572185565) < 3 * mc$error)
 
+# --- Tema 8 -------------------------------------------------------------------
+A8 <- diag(c(2, 1, 3)); B8 <- rbind(c(1, 1, 1), c(5, 10, 15))
+s8 <- lagrange_quadratic(A8, B8, c(14, 150))
+comprobar("Lagrange: x* = (2, 8, 4) y λ* = (0, 1.6)",
+          cerca(s8$x, c(2, 8, 4)) && abs(s8$lam[1]) < 1e-10 && cerca(s8$lam[2], 1.6))
+comprobar("Lagrange: B como vector por filas",
+          cerca(lagrange_quadratic(A8, c(1, 1, 1, 5, 10, 15), c(14, 150))$x, c(2, 8, 4)))
+r8 <- function(b) { x <- lagrange_quadratic(A8, B8, b)$x; drop(x %*% A8 %*% x) }
+comprobar("riesgo mínimo 120; 125 con M = 15; 113.22 con μ = 145 (errata apartado c)",
+          cerca(r8(c(14, 150)), 120) && cerca(r8(c(15, 150)), 125) &&
+          cerca(r8(c(14, 145)), 113.22222222222273))
+comprobar("(B A⁻¹ Bᵀ)_11 = 11/6 (errata: 5/6)",
+          cerca((B8 %*% solve(A8) %*% t(B8))[1, 1], 11 / 6))
+
+# --- Tema 9 -------------------------------------------------------------------
+m9 <- c(0.3, 0.2, 0.5)
+C9 <- cov_from_corr(c(0.15, 0.02, 0.3), rbind(c(1, -0.07, 0.02), c(-0.07, 1, 0.2), c(0.02, 0.2, 1)))
+w9 <- min_variance_weights(C9)
+comprobar("Teorema 2: pesos del Ejemplo 1",
+          cerca(w9, c(0.0262798833895962, 0.9829036025632535, -0.009183485952849714)))
+s9 <- portfolio_stats(w9, m9, C9)
+comprobar("Ejemplo 1: μ* = 0.1999 y σ* = 0.0194 (errata: 19.33 %)",
+          cerca(s9$mu, 0.1998729425531047) && cerca(s9$sigma, 0.019406763830429496))
+w3 <- target_return_weights(m9, C9, 0.3)
+comprobar("Teorema 3 con μ = 0.3",
+          cerca(w3, c(0.3207891358691933, 0.452807242753859, 0.2264036213769307)) &&
+          cerca(sum(w3), 1) && cerca(sum(m9 * w3), 0.3))
+fr <- efficient_frontier(m9, C9, c(0.15, 0.45))
+comprobar("frontera eficiente", cerca(fr$sigmas, c(0.04583525720063556, 0.20915735088498907)) &&
+                                identical(dim(fr$pesos), c(2L, 3L)))
+o <- rep(1, 3); Ci <- solve(C9)
+a <- drop(m9 %*% Ci %*% m9); b <- drop(o %*% Ci %*% m9); cc <- drop(o %*% Ci %*% o)
+comprobar("vértice de la bala = cartera del Teorema 2",
+          cerca(b / cc, s9$mu) && cerca(1 / sqrt(cc), s9$sigma) &&
+          cerca(sqrt((cc * 0.45^2 - 2 * b * 0.45 + a) / (a * cc - b^2)), fr$sigmas[2]))
+rp <- random_portfolios(m9, C9, n = 500)
+comprobar("carteras aleatorias sin cortos: pesos >= 0 que suman 1, dentro de la bala",
+          all(rp$pesos >= 0) && cerca(rowSums(rp$pesos), rep(1, 500)) &&
+          all(rp$sigmas >= sqrt((cc * rp$mus^2 - 2 * b * rp$mus + a) / (a * cc - b^2)) - 1e-12))
+
+# --- Con datos (Clase 6, §4) ----------------------------------------------------
+precios <- cargar("mercado_simulado.csv")[, c("AK1", "AK2", "AK3", "AK4")]
+R4 <- log_returns(precios)
+comprobar("log-retornos: 503 filas y primera fila",
+          nrow(R4) == 503 && rownames(R4)[1] == "2024-11-04" &&
+          cerca(unlist(R4[1, ], use.names = FALSE),
+                c(-0.019182819416773987, -0.01999864650668997, -0.013977227930859466, 0.0006897620594464429)))
+e4 <- mean_cov(R4, periods_per_year = 252)
+comprobar("m y C anualizados",
+          cerca(unname(e4$m), c(0.050058187069310096, 0.18819928133958952, 0.2091084433733345, 0.25116166214895663)) &&
+          cerca(unname(diag(e4$C)), c(0.04887252197103709, 0.06968626494231306, 0.09422880250603582, 0.04049553658732223)) &&
+          cerca(e4$C[1, 2], 0.020551104564097002))
+w4 <- min_variance_weights(e4$C)
+s4 <- portfolio_stats(w4, e4$m, e4$C)
+comprobar("mínimo riesgo con AK1-AK4",
+          cerca(unname(w4), c(0.2564791134921218, 0.19456189181152594, 0.05958967958762394, 0.4893693151087283)) &&
+          cerca(s4$mu, 0.1848268033846481) && cerca(s4$sigma, 0.12828497463740807))
+
+# --- Tema 10 ------------------------------------------------------------------
+wt <- tangency_weights(m9, C9, 0.01)
+st <- portfolio_stats(wt, m9, C9)
+comprobar("cartera del mercado (Ejemplo 1 del Tema 10, μ_rf = 0.01)",
+          cerca(wt, c(0.034696175971295096, 0.9677548558835264, -0.002451031854821378)) &&
+          cerca(st$mu, 0.20273430804068313) && cerca(st$sigma, 0.019552445984863037))
+comprobar("ratio de Sharpe", cerca(sharpe_ratio(wt, m9, C9, 0.01), 9.85729909137162))
+comprobar("CML y cartera mixta", cerca(capital_market_line(0.1, 0.03, 0.12, 0.2), 0.075) &&
+          cerca(unlist(mixed_portfolio(0.8, 0.03, 0.12, 0.2)), c(sigma = 0.16, mu = 0.102)))
+comprobar("SML del Ejemplo 2 (errata: a5 = -2.4 %)",
+          cerca(security_market_line(c(0.65, 1, 1.2, -0.2, -0.6), 0.12, 0.03),
+                c(0.0885, 0.12, 0.138, 0.012, -0.024)))
+Rm <- log_returns(cargar("mercado_simulado.csv"))
+comprobar("betas de mercado_simulado.csv",
+          cerca(sapply(c("AK1", "AK2", "AK3", "AK4"), function(k) beta(Rm[[k]], Rm$MERCADO)),
+                c(AK1 = 0.6171816537727894, AK2 = 1.0229345657325164,
+                  AK3 = 1.3365651085950885, AK4 = -0.23000496417118416)))
+
 cat(sprintf("Pruebas de R: %d comprobaciones correctas.\n", n_ok))

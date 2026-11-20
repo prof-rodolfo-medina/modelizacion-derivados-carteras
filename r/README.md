@@ -14,6 +14,7 @@ Material de apoyo para quien ya programa en **R** y quiere pasar a Python, o al 
 | [`mvdc/binomial.R`](mvdc/binomial.R) | `src/mvdc/binomial.py` | Tema 3: árbol monoperiodo (Métodos I y II) y cobertura delta. Tema 4: árbol multiperiodo, inducción hacia atrás, fórmula cerrada y calibración de Hull-White |
 | [`mvdc/lognormal.R`](mvdc/lognormal.R) | `src/mvdc/lognormal.py` | Tema 5: proceso de Wiener, movimiento browniano geométrico, Euler-Maruyama, media, desviación y banda del modelo log-normal. Tema 6: estimadores MME, MMV y MMNP, ECM, EPAM y `fit_and_validate` |
 | [`mvdc/black_scholes.R`](mvdc/black_scholes.R) | `src/mvdc/black_scholes.py` | Tema 7: fórmula de Black-Scholes (call y put), paridad put-call, Monte Carlo y convergencia del árbol CRR |
+| [`mvdc/portfolio.R`](mvdc/portfolio.R) | `src/mvdc/portfolio.py` | Tema 8: log-retornos, $m$ y $C$, Lagrange para formas cuadráticas. Tema 9: cartera de mínimo riesgo (Teorema 2), rendimiento prefijado (Teorema 3), frontera eficiente, carteras aleatorias y `plot_frontier`. Tema 10: cartera tangente, ratio de Sharpe, CML, cartera mixta, β y SML |
 | [`mvdc/datos.R`](mvdc/datos.R) | `src/mvdc/datos.py` | `cargar(nombre)`: lee un CSV de `datos/` (o de GitHub si no lo encuentra) |
 | [`mvdc/cargar.R`](mvdc/cargar.R) | `import mvdc` | Carga las funciones desde el repositorio o, si no lo encuentra, desde GitHub |
 | [`pruebas.R`](pruebas.R) | `tests/` | Comprueba que R y Python dan los mismos resultados |
@@ -27,6 +28,7 @@ Scripts de las sesiones (junto al cuaderno de Python de cada semana):
 | Clase 3 · Tema 4 | [`clase-03-arboles-multiperiodo-hull-white.R`](../sesiones/semana-03/clase-03-arboles-multiperiodo-hull-white.R) | [`.ipynb`](../sesiones/semana-03/clase-03-arboles-multiperiodo-hull-white.ipynb) |
 | Clase 4 · Tema 5 | [`clase-04-movimiento-browniano-lognormal.R`](../sesiones/semana-04/clase-04-movimiento-browniano-lognormal.R) | [`.ipynb`](../sesiones/semana-04/clase-04-movimiento-browniano-lognormal.ipynb) |
 | Clase 5 · Temas 6 y 7 | [`clase-05-estimacion-lognormal-black-scholes.R`](../sesiones/semana-05/clase-05-estimacion-lognormal-black-scholes.R) | [`.ipynb`](../sesiones/semana-05/clase-05-estimacion-lognormal-black-scholes.ipynb) |
+| Clase 6 · Temas 8 y 9 | [`clase-06-carteras-minimo-riesgo-markowitz.R`](../sesiones/semana-06/clase-06-carteras-minimo-riesgo-markowitz.R) | [`.ipynb`](../sesiones/semana-06/clase-06-carteras-minimo-riesgo-markowitz.ipynb) |
 
 Las funciones de R tienen **el mismo nombre y los mismos argumentos** que en Python
 (`long_call(ST, K, C)`, `strategy(ST, legs)`, `one_period_price(S0, Su, Sd, K, r, tau, kind)`…),
@@ -81,6 +83,21 @@ Solo hace falta **R ≥ 4.2**; no se usa ningún paquete adicional (gráficos ba
 | Unir tablas | `pd.concat(lista)` / `pd.concat(dic, axis=1)` | `do.call(rbind, lista)` / `do.call(cbind, lista)` |
 | Usar columnas sin repetir el nombre de la tabla | `df.eval(...)` o `df.S0`, `df.K`… | `with(df, f(S0, K))` |
 | Leer un CSV | `pd.read_csv(ruta, index_col=0)` | `read.csv(ruta, row.names = 1)` |
+| Elegir columnas | `df[["AK1", "AK2"]]` | `df[, c("AK1", "AK2")]` |
+| Matriz diagonal | `np.diag([2, 1, 3])` | `diag(c(2, 1, 3))` |
+| Matriz por filas | `np.array([[1, 1, 1], [5, 10, 15]])` | `rbind(c(1, 1, 1), c(5, 10, 15))` |
+| Apilar vectores como filas | `np.vstack([m, uno])` | `rbind(m, uno)` |
+| Producto matricial | `A @ B` | `A %*% B` |
+| Forma cuadrática $wCw^\top$ | `w @ C @ w` (un número) | `drop(w %*% C %*% w)` (`drop` quita la matriz 1 × 1) |
+| Traspuesta / inversa | `A.T`, `np.linalg.inv(A)` | `t(A)`, `solve(A)` |
+| Resolver $Cx = b$ | `np.linalg.solve(C, b)` | `solve(C, b)` |
+| Producto exterior | `np.outer(s, s)` | `outer(s, s)` |
+| Diagonal de una matriz | `np.diag(C)` | `diag(C)` |
+| Medias por columna | `R.mean(axis=0)` | `colMeans(R)` |
+| Matriz de covarianzas / correlaciones | `np.cov(R, rowvar=False)`, `np.corrcoef(R, rowvar=False)` | `cov(R)`, `cor(R)` |
+| Log-retornos de una tabla de precios | `np.log(P / P.shift(1)).dropna()` | `log(P[-1, ] / P[-nrow(P), ])` |
+| Primeras filas | `R.iloc[:252]` | `R[1:252, ]` |
+| Minimizar con cotas | `scipy.optimize.minimize(f, x0, bounds=[(0, 1)]*n)` | `optim(x0, f, method = "L-BFGS-B", lower = 0, upper = 1)` |
 | Una columna | `df["S"]` | `df$S` |
 | Devolver varios valores | `return V, q` → `V, q = f()` | `list(V = V, q = q)` → `res$V`, `res$q` |
 | Cambiar solo algunos argumentos | `{**base, **cambios}` | `modifyList(base, list(...))` |
